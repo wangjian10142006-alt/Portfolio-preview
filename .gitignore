@@ -24,3 +24,6 @@ Thumbs.db
 *.tsbuildinfo
 next-env.d.ts
 .vercel
+
+# 视频素材不进 git（体积大、不常改，单独管理）
+public/videos/works/*.mp4

@@ -1,7 +1,7 @@
 import Reveal from '../Reveal/Reveal';
 import styles from './Sections.module.css';
 
-export default function Skills({ skills }) {
+export default function Skills({ skills, coreValues }) {
   return (
     <section id="skills" className={styles.section} aria-labelledby="skills-h">
       <div className={styles.inner}>
@@ -21,6 +21,22 @@ export default function Skills({ skills }) {
             </Reveal>
           ))}
         </div>
+
+        {coreValues && coreValues.length > 0 && (
+          <div className={styles.coreSection}>
+            <Reveal>
+              <h3 className={styles.coreTitle}>核心价值</h3>
+            </Reveal>
+            <div className={styles.coreGrid}>
+              {coreValues.map((c, i) => (
+                <Reveal key={c.title} delay={i * 120} className={styles.coreCard}>
+                  <h4 className={styles.coreCardTitle}>{c.title}</h4>
+                  <p className={styles.coreCardDesc}>{c.desc}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

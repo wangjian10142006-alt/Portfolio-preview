@@ -33,9 +33,6 @@ export default function Experience({ experience, education, certifications }) {
               <h3 className={styles.panelTitle}>教育经历</h3>
               <p className={styles.role}>{education.degree}</p>
               <p className={styles.org}>{education.school}</p>
-              <p className={styles.period}>
-                {education.period} <span>{education.score}</span>
-              </p>
             </Reveal>
             {certifications.length > 0 && (
               <Reveal className={styles.panel} delay={140}>

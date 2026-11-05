@@ -11,6 +11,7 @@ import {
   nav,
   about,
   skills,
+  coreValues,
   experience,
   education,
   certifications,
@@ -34,7 +35,7 @@ export default function Home() {
         {/* Everything below slides up over the sticky hero. */}
         <div className="sheet">
           <About about={about} />
-          <Skills skills={skills} />
+          <Skills skills={skills} coreValues={coreValues} />
           <Experience experience={experience} education={education} certifications={certifications} />
           <Projects id="work" projects={projects} />
           <Contact id="contact" profile={profile} location={location} />
