@@ -45,7 +45,7 @@ export default function VideoIntro({
   firstName,
   lastName,
   subtitle,
-  subtitleEn,
+  specs,
   nextSectionId = 'work',
 }) {
   const rootRef = useRef(null);
@@ -158,9 +158,9 @@ export default function VideoIntro({
           2.4
         )
         .fromTo(
-          '[data-anim="subtitleEn"]',
-          { autoAlpha: 0, y: 14 },
-          { autoAlpha: 1, y: 0, duration: 1.6 },
+          '[data-anim="spec"]',
+          { autoAlpha: 0, y: 12 },
+          { autoAlpha: 1, y: 0, duration: 1.1, stagger: 0.12 },
           2.65
         )
         .fromTo(
@@ -291,10 +291,15 @@ export default function VideoIntro({
         <p className={styles.subtitle} data-anim="subtitle">
           {subtitle}
         </p>
-        {subtitleEn && (
-          <p className={styles.subtitleEn} data-anim="subtitleEn">
-            {subtitleEn}
-          </p>
+        {specs?.length > 0 && (
+          <dl className={styles.specs}>
+            {specs.map((row) => (
+              <div className={styles.specRow} data-anim="spec" key={row.label}>
+                <dt>{row.label}</dt>
+                <dd>{row.value}</dd>
+              </div>
+            ))}
+          </dl>
         )}
       </div>
 

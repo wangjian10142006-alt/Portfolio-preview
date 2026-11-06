@@ -140,16 +140,35 @@
   color: var(--muted);
 }
 
-/* 英文副标题：小一号、宽字距，做中文的“字幕条” */
-.subtitleEn {
-  margin: 0.85rem 0 0;
-  max-width: 52ch;
-  font-size: clamp(0.72rem, 0.88vw, 0.82rem);
-  font-weight: 500;
-  line-height: 1.75;
-  letter-spacing: 0.14em;
+/* 英文规格牌：把一句话拆成「标签 / 参数」，等宽字体 + 细分隔线 */
+.specs {
+  margin: 2rem 0 0;
+  padding: 0;
+  max-width: 40rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.specRow {
+  display: grid;
+  grid-template-columns: 5.5rem 1fr;
+  align-items: baseline;
+  padding: 0.72rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.specRow dt {
+  font-size: 0.625rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(255, 241, 224, 0.4);
+  color: rgba(255, 179, 107, 0.8);
+}
+
+.specRow dd {
+  margin: 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 241, 224, 0.78);
 }
 
 /* ---------- controls ---------- */
@@ -352,13 +371,18 @@
 }
 
 @media (max-width: 760px) {
+  /* 左右同时定位，彻底锁死宽度，防止长英文把内容顶出屏幕 */
   .content {
+    left: 1.25rem;
+    right: 1.25rem;
     bottom: 6.5rem;
+    max-width: none;
   }
 
   .tagline {
     margin-bottom: 1rem;
-    letter-spacing: 0.26em;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
   }
 
   .subtitle {
@@ -367,11 +391,23 @@
     line-height: 1.55;
   }
 
-  .subtitleEn {
-    margin-top: 0.7rem;
-    font-size: 0.62rem;
-    letter-spacing: 0.1em;
-    line-height: 1.65;
+  .specs {
+    margin-top: 1.35rem;
+  }
+
+  .specRow {
+    grid-template-columns: 4.4rem 1fr;
+    padding: 0.58rem 0;
+  }
+
+  .specRow dt {
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+  }
+
+  .specRow dd {
+    font-size: 0.6rem;
+    letter-spacing: 0.01em;
   }
 
   /* Controls move to the top so they never collide with the copy. */
