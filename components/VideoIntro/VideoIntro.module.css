@@ -140,6 +140,18 @@
   color: var(--muted);
 }
 
+/* 英文副标题：小一号、宽字距，做中文的“字幕条” */
+.subtitleEn {
+  margin: 0.85rem 0 0;
+  max-width: 52ch;
+  font-size: clamp(0.72rem, 0.88vw, 0.82rem);
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 241, 224, 0.4);
+}
+
 /* ---------- controls ---------- */
 .controls {
   position: absolute;
@@ -353,6 +365,13 @@
     margin-top: 1.1rem;
     font-size: 0.92rem;
     line-height: 1.55;
+  }
+
+  .subtitleEn {
+    margin-top: 0.7rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    line-height: 1.65;
   }
 
   /* Controls move to the top so they never collide with the copy. */

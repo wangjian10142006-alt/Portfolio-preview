@@ -30,6 +30,7 @@ export default function Home() {
           firstName={profile.firstName}
           lastName={profile.lastName}
           subtitle={profile.subtitle}
+          subtitleEn={profile.subtitleEn}
           nextSectionId="about"
         />
         {/* Everything below slides up over the sticky hero. */}

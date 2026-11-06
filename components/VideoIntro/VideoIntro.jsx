@@ -45,6 +45,7 @@ export default function VideoIntro({
   firstName,
   lastName,
   subtitle,
+  subtitleEn,
   nextSectionId = 'work',
 }) {
   const rootRef = useRef(null);
@@ -155,6 +156,12 @@ export default function VideoIntro({
           { autoAlpha: 0, y: 18 },
           { autoAlpha: 1, y: 0, duration: 1.6 },
           2.4
+        )
+        .fromTo(
+          '[data-anim="subtitleEn"]',
+          { autoAlpha: 0, y: 14 },
+          { autoAlpha: 1, y: 0, duration: 1.6 },
+          2.65
         )
         .fromTo(
           '[data-anim="control"]',
@@ -284,6 +291,11 @@ export default function VideoIntro({
         <p className={styles.subtitle} data-anim="subtitle">
           {subtitle}
         </p>
+        {subtitleEn && (
+          <p className={styles.subtitleEn} data-anim="subtitleEn">
+            {subtitleEn}
+          </p>
+        )}
       </div>
 
       <div className={styles.controls}>
